@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#142445" />
+<meta name="description" content="Radar AI Act: 8 casi interattivi per la formazione nella Pubblica Amministrazione" />
+<title>Radar AI Act · Laboratorio per la PA</title>
+<style>
+:root{color-scheme:dark;--navy:#101c35;--panel:#192a49;--panel2:#203454;--line:#324763;--white:#f7fafc;--muted:#b2c2d8;--blue:#56a7ff;--mint:#49d3b0;--orange:#ffc16b;--red:#ff7584;--violet:#bbaaff;--shadow:0 18px 60px #030e2499}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--white);background:radial-gradient(ellipse at 17% -10%,#294d78 0,transparent 42%),radial-gradient(ellipse at 90% 0,#182d58 0,transparent 34%),var(--navy);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #8acfff;outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}
+a{color:#93c9ff}.shell{max-width:1120px;margin:auto;padding:22px 22px 54px}.mast{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:21px;border-bottom:1px solid #49607c77}.brand{display:flex;align-items:center;gap:12px;cursor:pointer}.brand-icon{height:46px;width:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#78c6ff,#2571f5);font-size:26px;box-shadow:0 7px 26px #317ce55e}.brand strong{display:block;font-size:20px;letter-spacing:.03em;line-height:1.2}.brand small{color:var(--muted);font-size:12px}.topright{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.outline,.secondary,.primary,.ghost{border:1px solid #546984;padding:10px 15px;color:var(--white);border-radius:13px;background:#243858;transition:filter .18s,transform .18s}.outline:hover,.secondary:hover,.primary:hover,.ghost:hover{filter:brightness(1.14)}.primary:active,.outline:active{transform:translateY(1px)}.primary{color:#06172d;font-weight:800;background:linear-gradient(105deg,#75c7ff,#52e0c0);border:0;box-shadow:0 7px 22px #2ca5bc33}.secondary{background:#304469}.ghost{background:transparent;border-color:transparent;color:var(--muted)}.small{font-size:13px;padding:8px 11px}.center{text-align:center}.eyebrow{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}h1{font-size:clamp(38px,5.2vw,68px);line-height:1.05;letter-spacing:-.048em;margin:18px 0}h2{font-size:clamp(27px,3vw,38px);line-height:1.16;letter-spacing:-.025em;margin:8px 0 12px}h3{margin:4px 0 12px;font-size:21px}p{margin:9px 0 14px}.lead{font-size:clamp(17px,2vw,21px);color:#d0dfec;max-width:790px;margin:0 auto 26px}.hero{padding:65px 20px 24px;position:relative}.accent{color:#ffcf70}.hero-icons{display:flex;gap:13px;justify-content:center;margin-top:8px}.hero-icons span{width:56px;height:56px;display:grid;place-items:center;border:1px solid #ffffff2c;background:#253c5c;border-radius:17px;font-size:27px}.panel{border:1px solid #405574;background:linear-gradient(155deg,#23395aee,#172746ee);border-radius:24px;box-shadow:var(--shadow)}.homepanel{max-width:760px;margin:18px auto 0;padding:28px 34px}.label{display:block;color:#d6e4ef;font-weight:700;margin-bottom:8px}.field{width:100%;background:#101f38;border:1px solid #5e7898;color:white;border-radius:13px;padding:14px 16px}.mode-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.mode{display:block;text-align:left;padding:15px;border:2px solid #506481;border-radius:15px;background:#162945;color:var(--white);min-height:110px}.mode.selected{border-color:#62dcbf;background:#20475a;box-shadow:inset 0 0 0 1px #5bdaac70}.mode strong,.mode span{display:block}.mode span{font-size:13px;color:var(--muted);margin-top:4px}.cta{width:100%;font-size:18px;padding:16px;border-radius:15px}.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0 12px}.stat{border:1px solid #425a75;background:#213450;border-radius:12px;padding:7px 13px;font-weight:700;font-size:13px;color:#dce6f3}.notes{color:var(--muted);text-align:center;font-size:13px;max-width:820px;margin:24px auto}.stage-header{padding-top:25px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.progress-meta{display:flex;align-items:center;gap:11px;flex-wrap:wrap;font-size:13px;color:#c3d2e4;font-weight:800}.progress-wrap{height:9px;border-radius:15px;overflow:hidden;background:#34445e;margin:13px 0 25px}.progress-fill{height:100%;background:linear-gradient(90deg,#5eafff,#58dfb9);border-radius:15px;transition:width .3s}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.timer{font-size:14px;font-variant-numeric:tabular-nums;border:1px solid #4c6882;padding:8px 11px;border-radius:12px;background:#1e3350;min-width:83px;text-align:center}.case-card{padding:27px 32px;margin-bottom:18px}.sector{color:#b5d7ff;font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:850}.case-head{display:flex;align-items:flex-start;gap:19px}.case-em{font-size:44px;background:#344b6d;padding:8px;border-radius:17px;line-height:1.5;flex-shrink:0}.case-text{font-size:clamp(17px,1.9vw,21px);line-height:1.63;color:#eef5ff;margin:15px 0 3px;max-width:1000px}.questionbar{display:flex;align-items:center;gap:10px;color:#e2edfa;font-weight:750;font-size:17px;margin:20px 0 13px}.bubble{height:27px;width:27px;display:inline-grid;place-items:center;background:#4b77a7;border-radius:50%;font-size:13px}.classgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}.cat{border:2px solid #445a76;background:#203654;color:#ebf5ff;border-radius:16px;padding:18px 10px;min-height:138px;text-align:left}.cat:hover{background:#294464}.cat.selected{border-color:white;box-shadow:0 0 0 2px #ffffff35}.cat .ci{display:block;font-size:27px;margin-bottom:10px}.cat strong{display:block;font-size:14px;line-height:1.24}.cat small{display:block;color:#bdcee0;margin-top:7px;font-size:11px;line-height:1.35}.cat[data-cat=stop]{border-top-color:var(--red)}.cat[data-cat=alto]{border-top-color:var(--orange)}.cat[data-cat=trasp]{border-top-color:var(--blue)}.cat[data-cat=ordin]{border-top-color:var(--mint)}.cat[data-cat=verifica]{border-top-color:var(--violet)}.cat.selected[data-cat=stop]{background:#633145}.cat.selected[data-cat=alto]{background:#584126}.cat.selected[data-cat=trasp]{background:#214d79}.cat.selected[data-cat=ordin]{background:#174f4d}.cat.selected[data-cat=verifica]{background:#4b3972}
+.answerbox{padding:22px 25px;margin-top:18px}.options{display:grid;gap:10px}.opt{width:100%;display:flex;align-items:flex-start;gap:14px;text-align:left;border:1px solid #4b6483;border-radius:13px;background:#1a2f4e;padding:14px 16px;color:#eff7ff}.opt.selected{border:2px solid #7fe3c5;background:#205364;padding:13px 15px}.opt em{display:grid;place-items:center;min-width:26px;height:26px;border-radius:50%;background:#315177;font-size:13px;font-style:normal;font-weight:850}.actions{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:19px;flex-wrap:wrap}.actions .primary{min-width:220px}.muted{color:var(--muted)}.feedback-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.points{padding:8px 12px;border-radius:10px;background:#235c4d;color:#adffe2;font-weight:850}.feedback-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:17px}.feedback-detail{padding:23px}.feedback-detail p{font-size:16px;color:#dceaf5}.keypoint{font-weight:800;margin:12px 0;color:#fff}.ref{font-size:13px;color:#a5c9f9}.ref a{word-break:break-word}.small-list{padding-left:19px;color:#d6e2f0;font-size:15px}.small-list li{margin-bottom:11px}.resultgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.resultstat{padding:20px;border:1px solid #455b73;border-radius:16px;background:#263c59;text-align:center}.resultstat big{font-size:31px;display:block;font-weight:850}.resultstat small{color:#b7cadd}.resulthero{padding:44px 25px;text-align:center}.review{margin-top:20px;display:grid;gap:11px}.reviewitem{border:1px solid #4b6079;border-radius:14px;background:#203553;padding:15px 18px}.reviewitem summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800;list-style:none}.reviewitem summary::-webkit-details-marker{display:none}.reviewitem p{color:#d0def0}.pill{padding:4px 9px;border-radius:9px;font-size:12px;font-weight:850;background:#375574;color:#effaff;white-space:nowrap}.pill.wrong{background:#593944}.pill.right{background:#245f50}.infobox{max-width:850px;margin:30px auto;padding:25px}.infobox li{margin-bottom:8px}.info-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.infobox a{font-size:14px}.footer{margin-top:38px;border-top:1px solid #51688177;padding:20px 0 0;color:#b6c8dc;font-size:12px;text-align:center}.introtext{color:#c7d4e5}.source-list{line-height:1.9}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.classgrid{grid-template-columns:repeat(2,1fr)}.cat{min-height:108px}.feedback-grid{grid-template-columns:1fr}.resultgrid{grid-template-columns:repeat(2,1fr)}.shell{padding:14px 15px 35px}.case-card{padding:21px}.case-em{font-size:31px}.mode-row{grid-template-columns:1fr}.homepanel{padding:22px}.hero{padding:40px 6px 10px}}
+@media(max-width:480px){.classgrid{grid-template-columns:1fr 1fr;gap:8px}.cat{padding:12px 10px}.cat .ci{font-size:22px;margin-bottom:5px}.cat strong{font-size:13px}.cat small{font-size:10px}.mast .brand strong{font-size:16px}.brand-icon{width:39px;height:39px}.topright .outline{font-size:12px;padding:8px}.actions{flex-direction:column-reverse;align-items:stretch}.actions button{width:100%}.case-head{align-items:center}.hero-icons span{width:48px;height:48px}.resultgrid{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}@media print{body{background:white;color:#222}.mast,.toolbar,.actions,.footer,.primary,.secondary,.outline,.ghost{display:none!important}.panel,.reviewitem{box-shadow:none;color:#222;border:1px solid #bbb;background:white}.muted,.lead,.reviewitem p{color:#333!important}.pill{color:#111}.shell{max-width:none}}
+</style>
+</head>
+<body>
+<div class="shell"><header class="mast"><div class="brand" role="button" tabindex="0" data-action="home" aria-label="Torna alla schermata iniziale"><div class="brand-icon" aria-hidden="true">📡</div><div><strong>RADAR AI ACT</strong><small>Laboratorio interattivo per la PA</small></div></div><div class="topright"><button class="outline small" data-action="help">Come funziona</button><button class="outline small" data-action="sources">Fonti e note</button></div></header><main id="app" aria-live="polite"></main><footer class="footer">Simulazione didattica basata sull'AI Act · Nessun dato inviato a server · Le categorie sono segnali preliminari, non pareri legali</footer></div>
+<script type="application/json" id="case-data">{
+  "version": "2026-10",
+  "cases": [
+    {
+      "id": "social",
+      "icon": "🧭",
+      "sector": "Servizi comunali",
+      "title": "Il punteggio di affidabilità",
+      "text": "Il Comune assegna ai residenti un punteggio basato sui loro post sui social. Chi ottiene un punteggio basso viene escluso da un servizio pubblico che non ha alcun rapporto con quei post.",
+      "answer": "stop",
+      "reasons": [
+        "Il sistema utilizza dati su comportamenti sociali per penalizzare persone in un contesto non collegato.",
+        "Qualunque punteggio numerico creato con l’IA è sempre vietato.",
+        "Basta pubblicare un avviso sul sito per poter applicare il punteggio."
+      ],
+      "right": 0,
+      "why": "Questo esempio presenta gli elementi tipici del social scoring vietato: classificazione delle persone sulla base del comportamento sociale e trattamento sfavorevole in un contesto non collegato.",
+      "check": "Fermare la proposta e verificare la pratica alla luce dell’art. 5, par. 1, lett. c).",
+      "offices": "Ufficio legale, RTD/referente IA, DPO e responsabile del servizio.",
+      "ref": "Art. 5(1)(c) AI Act",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-5"
+    },
+    {
+      "id": "emozioni",
+      "icon": "🎭",
+      "sector": "Personale",
+      "title": "Il sensore dell’umore in ufficio",
+      "text": "Un sistema analizza webcam e voce dei dipendenti per dedurne le emozioni durante il lavoro e segnala ai responsabili chi risulta «demotivato». Non è previsto alcuno scopo medico o di sicurezza.",
+      "answer": "stop",
+      "reasons": [
+        "È lecito se i dipendenti firmano un modulo generico.",
+        "Il riconoscimento delle emozioni sul luogo di lavoro è vietato, salvo specifiche eccezioni mediche o di sicurezza.",
+        "Rientra sempre nel rischio minimo perché non emette provvedimenti."
+      ],
+      "right": 1,
+      "why": "L’art. 5 vieta, in linea generale, sistemi destinati a dedurre emozioni sul luogo di lavoro o nell’istruzione, salvo usi per motivi medici o di sicurezza.",
+      "check": "Bloccare l’ipotesi e distinguere l’uso vietato da eventuali eccezioni espressamente previste.",
+      "offices": "Direzione del personale, ufficio legale, DPO e RTD.",
+      "ref": "Art. 5(1)(f) AI Act",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-5"
+    },
+    {
+      "id": "concorso",
+      "icon": "🧑‍💼",
+      "sector": "Risorse umane",
+      "title": "La graduatoria automatica",
+      "text": "Un software analizza i curriculum inviati per un concorso, assegna un punteggio e seleziona chi accede alle prove successive. La commissione vede la graduatoria proposta.",
+      "answer": "alto",
+      "reasons": [
+        "Il software valuta candidature e incide sulla selezione del personale.",
+        "Il sistema è vietato soltanto perché opera in un Comune.",
+        "Il software è a basso rischio perché un operatore può vedere il risultato."
+      ],
+      "right": 0,
+      "why": "I sistemi destinati alla selezione e valutazione dei candidati rientrano tra gli usi potenzialmente ad alto rischio dell’Allegato III. Il controllo umano non cancella automaticamente questa qualificazione.",
+      "check": "Verificare funzione, ruolo dell’ente, documentazione del fornitore e obblighi applicabili.",
+      "offices": "Personale, RTD, ufficio legale, DPO e ICT.",
+      "ref": "Art. 6 e Allegato III, punto 4(a)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "contributi",
+      "icon": "🏠",
+      "sector": "Servizi sociali",
+      "title": "Il contributo per l’affitto",
+      "text": "Il Comune utilizza un algoritmo per valutare l’ammissibilità delle domande individuali di sostegno abitativo essenziale. Il punteggio suggerisce quali domande respingere.",
+      "answer": "alto",
+      "reasons": [
+        "È sempre un uso vietato perché tratta dati familiari.",
+        "È automaticamente un uso ordinario perché non decide da solo.",
+        "Valuta l’accesso a una prestazione essenziale per persone fisiche."
+      ],
+      "right": 2,
+      "why": "La valutazione dell’ammissibilità o concessione di prestazioni pubbliche essenziali può ricadere tra i casi ad alto rischio dell’Allegato III.",
+      "check": "Analizzare l’effetto concreto del punteggio, la classificazione, i presidi e gli obblighi applicabili.",
+      "offices": "Servizi sociali, RTD, DPO, ufficio legale e ICT.",
+      "ref": "Art. 6 e Allegato III, punto 5(a)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "produttivita",
+      "icon": "📈",
+      "sector": "Organizzazione del lavoro",
+      "title": "La pagella dei dipendenti",
+      "text": "Una piattaforma analizza le attività dei dipendenti e attribuisce valutazioni individuali che il dirigente usa per assegnare incarichi e opportunità professionali.",
+      "answer": "alto",
+      "reasons": [
+        "È un banale programma di contabilità.",
+        "L’IA monitora e valuta le prestazioni lavorative incidendo su decisioni relative al personale.",
+        "Non si applica alcuna regola perché il sistema resta interno."
+      ],
+      "right": 1,
+      "why": "L’Allegato III include determinati sistemi di IA per monitoraggio, valutazione delle prestazioni e decisioni che incidono sui lavoratori.",
+      "check": "Verificare l’impiego reale, classificazione AI Act, norme sul lavoro e protezione dei dati.",
+      "offices": "Personale, direzione, DPO, RTD e ufficio legale.",
+      "ref": "Art. 6 e Allegato III, punto 4(b)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "sportello",
+      "icon": "💬",
+      "sector": "Servizi online",
+      "title": "Il chatbot dello sportello",
+      "text": "Sul portale comunale un assistente virtuale risponde a domande su orari, moduli e appuntamenti. Il cittadino non vede alcuna indicazione che si tratta di un’IA.",
+      "answer": "trasp",
+      "reasons": [
+        "Il cittadino deve poter sapere che interagisce con un sistema di IA, salvo che sia evidente.",
+        "Ogni chatbot informativo è un sistema vietato.",
+        "È necessario fare una graduatoria dei cittadini che lo usano."
+      ],
+      "right": 0,
+      "why": "Per i sistemi destinati all’interazione diretta con persone fisiche occorre verificare l’obbligo di informazione previsto dall’art. 50, salvo che la natura artificiale dell’interazione risulti evidente.",
+      "check": "Mostrare in modo chiaro l’identità dell’assistente al più tardi alla prima interazione.",
+      "offices": "Responsabile del portale, RTD e ICT.",
+      "ref": "Art. 50(1) e (5) AI Act",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-50"
+    },
+    {
+      "id": "sindaco",
+      "icon": "🎬",
+      "sector": "Comunicazione istituzionale",
+      "title": "Il video che non è mai stato girato",
+      "text": "L’ufficio comunicazione vuole pubblicare un video realistico generato con IA in cui il sindaco pronuncia un discorso mai registrato davvero. Il video sembra autentico.",
+      "answer": "trasp",
+      "reasons": [
+        "Il video è vietato in ogni circostanza.",
+        "Può essere pubblicato senza alcuna informazione se è di qualità.",
+        "Va verificato e comunicato il carattere artificiale del deepfake, oltre alle autorizzazioni pertinenti."
+      ],
+      "right": 2,
+      "why": "Chi utilizza un sistema per generare o manipolare contenuti che costituiscono deepfake deve, nei casi previsti, rendere noto che sono artificiali. Restano altre verifiche, inclusa l’autorizzazione dell’interessato.",
+      "check": "Informativa chiara sul contenuto sintetico e verifica delle autorizzazioni e della comunicazione istituzionale.",
+      "offices": "Ufficio comunicazione, ufficio legale e RTD.",
+      "ref": "Art. 50(4)–(5) AI Act",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-50"
+    },
+    {
+      "id": "antispam",
+      "icon": "📨",
+      "sector": "Posta elettronica",
+      "title": "Il filtro antispam",
+      "text": "La casella generica dell’ufficio usa un filtro automatico che riconosce le email di spam e le separa dalla posta ordinaria. Non esamina domande di accesso a servizi né valuta i cittadini.",
+      "answer": "ordin",
+      "reasons": [
+        "Qualunque algoritmo usato dalla PA è alto rischio.",
+        "Per la funzione descritta non emerge una classificazione di alto rischio; restano sicurezza e altre norme.",
+        "Il filtro è social scoring perché analizza messaggi."
+      ],
+      "right": 1,
+      "why": "Il semplice filtraggio antispam costituisce, in genere, un utilizzo a impatto limitato per le categorie di rischio qui considerate. Ciò non elimina obblighi di sicurezza e di gestione corretta della posta.",
+      "check": "Verificare falsi positivi, recupero delle email, conservazione e sicurezza.",
+      "offices": "ICT e responsabile del servizio.",
+      "ref": "Art. 6 e Allegato III (verifica della funzione)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "duplicati",
+      "icon": "🗂️",
+      "sector": "Archivio",
+      "title": "I documenti duplicati",
+      "text": "Un software aiuta gli archivisti a trovare copie duplicate di documenti pubblici non riservati e propone quali file confrontare. Non elimina documenti e non decide su persone.",
+      "answer": "ordin",
+      "reasons": [
+        "La funzione è essenzialmente organizzativa e non risulta incidere sulle decisioni relative alle persone.",
+        "È vietato perché usa documenti pubblici.",
+        "È alto rischio perché i file si trovano su un server comunale."
+      ],
+      "right": 0,
+      "why": "L’individuazione di duplicati, nei termini descritti, è una funzione organizzativa. La valutazione va rifatta se la funzione cambia o tocca decisioni che incidono sui diritti.",
+      "check": "Verificare che le proposte siano riesaminate e non comportino cancellazioni automatiche o altri effetti non previsti.",
+      "offices": "Gestione documentale e ICT.",
+      "ref": "Art. 6 e Allegato III (verifica della funzione)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "bozza",
+      "icon": "📝",
+      "sector": "Segreteria",
+      "title": "Una bozza per l’ufficio",
+      "text": "Un dipendente usa uno strumento autorizzato per preparare una bozza interna, senza dati personali o riservati. Il testo viene controllato e corretto prima di essere utilizzato.",
+      "answer": "ordin",
+      "reasons": [
+        "Le bozze interne sono sempre sistemi ad alto rischio.",
+        "La bozza equivale automaticamente a una decisione amministrativa definitiva.",
+        "Per questo uso non emerge un obbligo specifico di alto rischio; restano verifica delle fonti e policy interne."
+      ],
+      "right": 2,
+      "why": "Scrivere una bozza interna non coincide, di per sé, con la valutazione automatizzata di persone o con un utilizzo previsto dall’Allegato III.",
+      "check": "Controllare autorizzazione dello strumento, affidabilità delle fonti e responsabilità della revisione.",
+      "offices": "Responsabile dell’ufficio e RTD/referente IA.",
+      "ref": "Art. 6 e Allegato III (verifica della funzione)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "smart",
+      "icon": "❔",
+      "sector": "Acquisti",
+      "title": "La piattaforma «SmartComune»",
+      "text": "Un fornitore propone «SmartComune AI», che promette di velocizzare le pratiche dei cittadini. La brochure non spiega se ordina file, assegna priorità o valuta i requisiti per ottenere prestazioni.",
+      "answer": "verifica",
+      "reasons": [
+        "Basta sapere che il programma usa l’IA generativa.",
+        "Serve sapere quali funzioni svolge e quali decisioni influenza prima di classificarlo.",
+        "Qualsiasi prodotto con nome commerciale che contiene AI è vietato."
+      ],
+      "right": 1,
+      "why": "La descrizione commerciale non basta: un semplice smistamento documentale è molto diverso dalla valutazione dell’accesso a un servizio essenziale.",
+      "check": "Richiedere al fornitore documentazione su finalità prevista, funzioni, utenti, output e uso nei procedimenti.",
+      "offices": "Acquisti, RTD, responsabile del procedimento, ICT e secondo il caso DPO/legale.",
+      "ref": "Art. 6 e Allegato III",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3"
+    },
+    {
+      "id": "telecamere",
+      "icon": "📷",
+      "sector": "Spazi pubblici",
+      "title": "Le telecamere intelligenti",
+      "text": "Il Comune valuta una piattaforma per le telecamere del centro storico. Il fornitore scrive solo «riconoscimento intelligente per la sicurezza», senza indicare se rileva flussi, identifica persone o confronta volti con banche dati.",
+      "answer": "verifica",
+      "reasons": [
+        "La finalità, la funzione biometrica e l’eventuale identificazione delle persone sono determinanti per la verifica.",
+        "La parola «sicurezza» rende automaticamente qualsiasi uso lecito.",
+        "Ogni telecamera stradale è vietata in modo assoluto."
+      ],
+      "right": 0,
+      "why": "La natura della funzione cambia radicalmente la disciplina: rilevare flussi non è lo stesso che identificare persone. Gli usi biometrici possono incontrare requisiti rigorosi o divieti specifici.",
+      "check": "Chiedere descrizione tecnica esatta, finalità, luoghi, soggetti identificati e base normativa.",
+      "offices": "Polizia locale, RTD, DPO, ICT e ufficio legale.",
+      "ref": "Art. 5, art. 6 e Allegato III",
+      "url": "https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-5"
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const bank=JSON.parse(document.getElementById('case-data').textContent).cases;
+const CAT={stop:{icon:'⛔',name:'Possibile pratica vietata',short:'STOP',explain:'Uso da fermare e valutare come possibile divieto.'},alto:{icon:'⚠️',name:'Possibile alto rischio',short:'ALTO RISCHIO',explain:'Servono verifica e requisiti specifici.'},trasp:{icon:'👁️',name:'Obblighi di trasparenza',short:'TRASPARENZA',explain:'Occorre verificare come informare le persone.'},ordin:{icon:'✅',name:'Uso ordinario',short:'USO ORDINARIO',explain:'Non emerge un obbligo specifico di alto rischio per l’uso descritto.'},verifica:{icon:'❔',name:'Informazioni insufficienti',short:'DA APPROFONDIRE',explain:'Prima di classificare occorre conoscere la funzione reale.'}};
+const ids=Object.keys(CAT);
+let s={screen:'home',mode:'participant',team:'Squadra del Comune',deck:[],idx:0,phase:'category',selected:null,reason:null,answers:[],revealed:false,paused:true,spent:0,runningAt:0,sourceScreen:'home'};
+const app=document.getElementById('app');
+function esc(x){return String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;}
+function newDeck(){const quotas={stop:2,alto:2,trasp:1,ordin:1,verifica:1};let chosen=[];for(const [kind,count] of Object.entries(quotas)){chosen.push(...shuffle(bank.filter(q=>q.answer===kind)).slice(0,count));}let more=shuffle(bank.filter(q=>!chosen.some(x=>x.id===q.id)));chosen.push(more[0]);return shuffle(chosen);}
+function nowSpent(){return s.spent+(s.paused?0:Math.round((Date.now()-s.runningAt)/1000));}
+function formatTime(t){return `${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;}
+function timeMarkup(){return `<span class="timer" aria-label="Tempo trascorso"><span data-time>${formatTime(nowSpent())}</span></span><button class="outline small" data-action="timer">${s.paused?'▶ Riprendi':'Ⅱ Pausa'}</button><button class="outline small" data-action="resetclock" title="Azzera il timer">↺</button>`;}
+function render(){if(s.screen==='home')app.innerHTML=homeHTML();else if(s.screen==='game')app.innerHTML=gameHTML();else if(s.screen==='result')app.innerHTML=resultHTML();else if(s.screen==='help')app.innerHTML=helpHTML();else if(s.screen==='sources')app.innerHTML=sourcesHTML();updateTimes();}
+function homeHTML(){return `<section class="hero center"><div class="eyebrow">ESERCITAZIONE 2 · QUIZ RAGIONATO</div><h1>Il <span class="accent">Radar</span> dell’AI Act</h1><p class="lead">Otto casi arrivano sulla tua scrivania. Riesci a distinguere un divieto, un possibile alto rischio, un obbligo di trasparenza e un uso ordinario?</p><div class="hero-icons" aria-hidden="true"><span>⛔</span><span>⚠️</span><span>👁️</span><span>✅</span><span>❔</span></div><div class="stats"><span class="stat">8 carte su 12</span><span class="stat">12–15 minuti</span><span class="stat">2 punti per carta</span><span class="stat">Nessun account</span></div></section><section class="panel homepanel"><label class="label" for="team">Nome della squadra (facoltativo)</label><input class="field" id="team" maxlength="52" autocomplete="off" value="${esc(s.team==='Squadra del Comune'?'':s.team)}" placeholder="Es. Gli istruttori del futuro"/><div class="mode-row"><button class="mode ${s.mode==='participant'?'selected':''}" data-action="mode" data-value="participant" aria-pressed="${s.mode==='participant'}"><strong>👥 Gioca in squadra</strong><span>Scegli il segnale e la motivazione. Guadagna punti e confronta le risposte.</span></button><button class="mode ${s.mode==='teacher'?'selected':''}" data-action="mode" data-value="teacher" aria-pressed="${s.mode==='teacher'}"><strong>🎤 Modalità formatore</strong><span>Proietta le carte e rivela le soluzioni dopo la discussione, senza punteggi.</span></button></div><button class="primary cta" data-action="start">${s.mode==='teacher'?'Avvia la sessione in aula':'Inizia il Radar'} →</button><p class="notes" style="margin:16px 0 0">Conta il ragionamento, non soltanto il colore. Alcuni casi richiedono ulteriori informazioni.</p></section>`;}
+function gameHTML(){const c=s.deck[s.idx],isTeacher=s.mode==='teacher';let body='';if(s.phase==='category'&&!isTeacher){body=`<div class="questionbar"><span class="bubble">1</span>Qual è il segnale prevalente?</div><div class="classgrid">${ids.map(k=>`<button class="cat ${s.selected===k?'selected':''}" data-action="cat" data-value="${k}" data-cat="${k}" aria-pressed="${s.selected===k}"><span class="ci" aria-hidden="true">${CAT[k].icon}</span><strong>${esc(CAT[k].name)}</strong><small>${esc(CAT[k].explain)}</small></button>`).join('')}</div><div class="actions"><span class="muted">Scegli un segnale, poi motiva la scelta.</span><button class="primary" data-action="to-reason" ${!s.selected?'disabled':''}>Continua: scegli il motivo →</button></div>`;}else if(s.phase==='reason'&&!isTeacher){body=`<div class="questionbar"><span class="bubble">2</span>Qual è la motivazione più importante?</div><div class="panel answerbox"><div class="options">${c.reasons.map((r,i)=>`<button class="opt ${s.reason===i?'selected':''}" data-action="reason" data-value="${i}" aria-pressed="${s.reason===i}"><em>${'ABC'[i]}</em><span>${esc(r)}</span></button>`).join('')}</div><div class="actions"><button class="outline" data-action="backcategory">← Cambia categoria</button><button class="primary" data-action="confirm" ${s.reason===null?'disabled':''}>Conferma e scopri la soluzione</button></div></div>`;}else if(s.phase==='feedback'||(isTeacher&&s.revealed)){body=feedbackHTML(c,isTeacher);}else if(isTeacher){body=`<div class="panel answerbox"><h3>Domanda per l’aula</h3><p class="lead" style="margin:0 0 15px;font-size:17px;text-align:left">Qual è il segnale prevalente e quale domanda fareste prima di procedere?</p><div class="classgrid" aria-label="Possibili risposte">${ids.map(k=>`<div class="cat" data-cat="${k}"><span class="ci">${CAT[k].icon}</span><strong>${esc(CAT[k].name)}</strong></div>`).join('')}</div><div class="actions"><span class="muted">Dai il tempo ai gruppi di confrontarsi.</span><button class="primary" data-action="reveal">Mostra la soluzione →</button></div></div>`;}
+return `<section class="stage-header"><div class="progress-meta"><span class="stat">${isTeacher?'MODALITÀ AULA':esc(s.team)}</span><span>Carta ${s.idx+1} di ${s.deck.length}</span>${!isTeacher?`<span>${s.answers.reduce((a,r)=>a+r.points,0)} punti</span>`:''}</div><div class="toolbar">${isTeacher&&s.idx>0?`<button class="outline small" data-action="prev">← Precedente</button>`:""}${timeMarkup()}<button class="ghost small" data-action="restart">Ricomincia</button></div></section><div class="progress-wrap"><div class="progress-fill" style="width:${((s.idx+1)/s.deck.length)*100}%"></div></div><section class="panel case-card"><div class="case-head"><div class="case-em" aria-hidden="true">${c.icon}</div><div><div class="sector">${esc(c.sector)} · CASO ${s.idx+1}</div><h2>${esc(c.title)}</h2></div></div><p class="case-text">${esc(c.text)}</p></section>${body}`;}
+function feedbackHTML(c,isTeacher){const r=s.answers[s.idx],points=isTeacher?null:r.points;return `<section class="panel answerbox"><div class="feedback-top"><div class="eyebrow">${isTeacher?'SOLUZIONE PER IL FORMATORE':'RISPOSTA E SPIEGAZIONE'}</div>${!isTeacher?`<span class="points">+${points} / 2 punti</span>`:''}</div><h2 style="margin-top:10px">${CAT[c.answer].icon} ${esc(CAT[c.answer].name)}</h2>${!isTeacher?`<p class="muted">La tua scelta: <b>${esc(CAT[r.category].name)}</b> · Motivazione: ${r.reasonCorrect?'corretta':'da rivedere'}.</p>`:''}<div class="feedback-grid"><div class="panel feedback-detail"><h3>Perché?</h3><p>${esc(c.why)}</p><div class="keypoint">Domanda decisiva</div><p>${esc(c.reasons[c.right])}</p></div><div class="panel feedback-detail"><h3>Che cosa fare?</h3><p>${esc(c.check)}</p><h3>Chi coinvolgere?</h3><p>${esc(c.offices)}</p><div class="ref">${esc(c.ref)} · <a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Fonte ufficiale ↗</a></div></div></div><div class="actions">${isTeacher?`<button class="outline" data-action="hide">Nascondi risposta</button>`:`<span class="muted">Rifletti sul ragionamento prima della prossima carta.</span>`}<button class="primary" data-action="next">${s.idx===s.deck.length-1?'Vai al riepilogo →':'Prossima carta →'}</button></div></section>`;}
+function resultHTML(){const isTeacher=s.mode==='teacher',score=s.answers.reduce((a,r)=>a+r.points,0),max=s.deck.length*2;let message=score<=6?'Hai individuato alcuni segnali. Rivediamo insieme le domande decisive.':score<=11?'Buon lavoro: stai imparando a distinguere le funzioni davvero rilevanti.':'Ottimo ragionamento: hai motivato bene la maggior parte delle valutazioni.';return `<section class="panel resulthero"><div class="eyebrow">LABORATORIO COMPLETATO</div><h1 style="font-size:clamp(32px,4vw,49px)">${isTeacher?'Le otto carte del Radar':'Complimenti, '+esc(s.team)+'!'}</h1><p class="lead">${isTeacher?'Le soluzioni possono essere riviste per il confronto finale.':message}</p><div class="resultgrid"><div class="resultstat"><big>${s.deck.length}</big><small>Casi esaminati</small></div><div class="resultstat"><big>${isTeacher?'—':score+' / '+max}</big><small>${isTeacher?'Valutazione in aula':'Punteggio'}</small></div><div class="resultstat"><big>${formatTime(nowSpent())}</big><small>Tempo trascorso</small></div><div class="resultstat"><big>5</big><small>Segnali possibili</small></div></div><h3>Tre domande da portare in ufficio</h3><p><strong>Che cosa fa il sistema?</strong> · <strong>Quali persone o diritti influenza?</strong> · <strong>Quali verifiche servono?</strong></p><div class="actions" style="justify-content:center"><button class="primary" data-action="export">↓ Scarica il riepilogo (.txt)</button><button class="outline" data-action="print">⎙ Stampa</button><button class="outline" data-action="restart">↻ Nuova partita</button></div></section><section class="review"><h2>Rivedi gli otto casi</h2>${s.deck.map((c,i)=>{const a=s.answers[i];return `<details class="reviewitem"><summary><span>${c.icon} ${i+1}. ${esc(c.title)}</span><span class="pill ${!isTeacher&&a&&a.category!==c.answer?'wrong':'right'}">${esc(CAT[c.answer].short)}</span></summary><p>${esc(c.text)}</p>${!isTeacher?`<p>La tua scelta: <strong>${esc(CAT[a.category].name)}</strong>; motivazione ${a.reasonCorrect?'corretta':'da rivedere'} (${a.points}/2 punti).</p>`:''}<p><strong>Spiegazione:</strong> ${esc(c.why)}</p><p><strong>Verifica:</strong> ${esc(c.check)}</p><p class="ref">${esc(c.ref)}</p></details>`;}).join('')}</section>`;}
+function helpHTML(){return `<section class="panel infobox"><div class="eyebrow">COME SI GIOCA</div><h2>Otto carte. Due decisioni.</h2><ol class="small-list"><li>Leggi la situazione proposta dall’ufficio.</li><li>Scegli il <strong>segnale prevalente</strong>: divieto, alto rischio, trasparenza, uso ordinario oppure dati insufficienti.</li><li>Seleziona la motivazione più importante.</li><li>Scopri la soluzione e confronta il tuo ragionamento con quello del gruppo.</li></ol><p>Ogni risposta corretta vale 1 punto: <strong>massimo 16 punti</strong>. La modalità formatore permette di proiettare la domanda e rivelare la spiegazione dopo il confronto, senza punteggi.</p><p>Per avere 12–15 minuti di discussione, il timer è solo indicativo: <strong>non blocca la partita</strong>.</p><p>Le cinque opzioni sono segnali didattici, non una classificazione normativa sempre esclusiva: in casi reali più obblighi possono coesistere.</p><button class="primary" data-action="return">← Torna indietro</button></section>`;}
+function sourcesHTML(){return `<section class="panel infobox"><div class="eyebrow">FONTI E LIMITI</div><h2>Riferimenti normativi</h2><p>Scenari simulati, pensati per dipendenti della Pubblica Amministrazione italiana. Le soluzioni costituiscono <strong>valutazioni didattiche preliminari</strong>: non sostituiscono l'istruttoria del caso concreto.</p><div class="source-list"><div>⛔ <a target="_blank" rel="noopener noreferrer" href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-5">Articolo 5 — Pratiche vietate</a></div><div>⚠️ <a target="_blank" rel="noopener noreferrer" href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-6">Articolo 6 — Classificazione alto rischio</a></div><div>📋 <a target="_blank" rel="noopener noreferrer" href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/annex-3">Allegato III — Utilizzi ad alto rischio</a></div><div>👁️ <a target="_blank" rel="noopener noreferrer" href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-50">Articolo 50 — Trasparenza</a></div></div><p class="muted">Riferimento: versione consolidata UE aggiornata al 27 luglio 2026. Ultima revisione del laboratorio: ottobre 2026.</p><p>Un uso «ordinario» non è privo di obblighi: continuano ad applicarsi GDPR, sicurezza e altre norme pertinenti. L'alto rischio non è sinonimo di divieto. Alcune funzioni preparatorie possono richiedere un esame specifico ai sensi dell'art. 6(3).</p><p>L’app non utilizza cookie, analytics, database, modelli esterni o reti. Il nome della squadra e le risposte restano in questa pagina e vengono persi con il refresh.</p><button class="primary" data-action="return">← Torna indietro</button></section>`;}
+function start(){const team=document.getElementById('team');s.team=(team&&team.value.trim().slice(0,52))||'Squadra del Comune';s.deck=newDeck();s.idx=0;s.phase='category';s.selected=null;s.reason=null;s.answers=[];s.revealed=false;s.screen='game';s.spent=0;s.runningAt=Date.now();s.paused=false;render();}
+function next(){if(s.idx===s.deck.length-1){s.spent=nowSpent();s.paused=true;s.screen='result';render();return;}s.idx++;s.selected=null;s.reason=null;s.phase='category';s.revealed=false;render();window.scrollTo({top:0,behavior:'smooth'});}
+function scoreAndReveal(){const c=s.deck[s.idx],rightCategory=s.selected===c.answer,rightReason=s.reason===c.right;s.answers.push({id:c.id,category:s.selected,reason:s.reason,reasonCorrect:rightReason,points:Number(rightCategory)+Number(rightReason)});s.phase='feedback';render();}
+function exportTxt(){const lines=[`RADAR AI ACT — RIEPILOGO`,`Squadra: ${s.mode==='teacher'?'Modalità formatore':s.team}`,`Durata: ${formatTime(nowSpent())}`,`Punteggio: ${s.mode==='teacher'?'N/D':s.answers.reduce((n,a)=>n+a.points,0)+'/'+s.deck.length*2}`,'',...s.deck.flatMap((c,i)=>{const r=s.answers[i];return [`${i+1}. ${c.title}`,`Scenario: ${c.text}`,`Segnale atteso: ${CAT[c.answer].name}`,`Motivazione: ${c.reasons[c.right]}`,`Spiegazione: ${c.why}`,`Da verificare: ${c.check}`,`Referenti: ${c.offices}`,`Riferimento: ${c.ref}`,`Fonte: ${c.url}`,...(r?[`Scelta: ${CAT[r.category].name} — motivazione ${r.reasonCorrect?'corretta':'da rivedere'} — ${r.points}/2 punti`]:[]),''];}), 'Materiale didattico: non sostituisce una valutazione giuridica del caso concreto.'];const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='radar-ai-act-riepilogo.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),600);}
+let storedScreen='home';
+document.addEventListener('click',e=>{let btn=e.target.closest('[data-action]');if(!btn)return;const a=btn.dataset.action;const v=btn.dataset.value;if(a==='mode'){const currentTeam=document.getElementById('team');if(currentTeam&&currentTeam.value.trim())s.team=currentTeam.value.trim().slice(0,52);s.mode=v;render();}else if(a==='start')start();else if(a==='cat'&&s.phase==='category'){s.selected=v;render();}else if(a==='to-reason'&&s.selected){s.phase='reason';render();}else if(a==='reason'&&s.phase==='reason'){s.reason=Number(v);render();}else if(a==='backcategory'){s.phase='category';render();}else if(a==='confirm'&&s.reason!==null&&s.selected)scoreAndReveal();else if(a==='reveal'&&s.mode==='teacher'){s.revealed=true;render();}else if(a==='hide'&&s.mode==='teacher'){s.revealed=false;render();}else if(a==='next')next();else if(a==='prev'&&s.mode==='teacher'&&s.idx>0){s.idx--;s.revealed=false;render();}else if(a==='restart'){if(confirm('Vuoi ricominciare? Le risposte della partita corrente saranno perse.')){s.spent=0;s.paused=true;s.mode='participant';s.screen='home';render();}}else if(a==='home'){if(s.screen==='game'&&!confirm('Tornare all’inizio? La partita corrente verrà interrotta.'))return;s.spent=0;s.paused=true;s.screen='home';render();}else if(a==='timer'){if(s.paused){s.runningAt=Date.now();s.paused=false;}else{s.spent=nowSpent();s.paused=true;}render();}else if(a==='resetclock'){s.spent=0;s.runningAt=Date.now();render();}else if(a==='help'||a==='sources'){if(s.screen!=='help'&&s.screen!=='sources')storedScreen=s.screen;s.screen=a;render();}else if(a==='return'){s.screen=storedScreen;render();}else if(a==='export'){exportTxt();}else if(a==='print'){window.print();}});
+document.querySelector('.brand').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();document.querySelector('.brand').click();}});
+function updateTimes(){if(s.screen==='game'){document.querySelectorAll('[data-time]').forEach(el=>{el.textContent=formatTime(nowSpent());});}}
+setInterval(updateTimes,1000);
+render();
+</script>
+</body>
+</html>
